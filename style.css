@@ -1,0 +1,153 @@
+/* GENERAL */
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Arial Black', 'Impact', sans-serif; /* más legible que solo Impact */
+    margin: 0;
+    padding: 0;
+}
+
+/* MÁRQUEES */
+.marquee {
+    background-color: #8B0000;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.3em; /* un poco más grande */
+    text-align: center;
+    animation: marquee 30s linear infinite; /* más lento */
+    border-bottom: 3px solid #fff;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ENCABEZADOS */
+h1 {
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px #8B0000;
+    margin-top: 20px;
+}
+
+/* PÁRRAFOS */
+p {
+    color: #fff;
+    text-align: center;
+    margin: 10px auto;
+    font-size: 1.1em;
+}
+
+/* FORMULARIO */
+form {
+    background-color: #000;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #8B0000;
+}
+
+/* FIELDSET */
+fieldset {
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+/* LEGEND */
+legend {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 1px 1px #8B0000;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+
+/* CLASES */
+.sexo-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* espacio entre el "Sexo:" y los radios */
+    margin-bottom: 15px;
+}
+
+.radios {
+    display: flex;
+    gap: 20px; /* espacio entre masculino y femenino */
+}
+
+.radios label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* espacio entre el radio y el texto */
+    cursor: pointer;
+}
+
+.radios input[type="radio"] {
+    accent-color: #8B0000; /* rojo oscuro para los radios */
+}
+
+
+/* INPUT Y SELECT */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 2px solid #8B0000;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="date"]:hover,
+select:hover {
+    border-color: #fff;
+    box-shadow: 0 0 10px #8B0000;
+}
+
+/* BOTÓN */
+button {
+    background-color: #8B0000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #8B0000;
+    border-color: #8B0000;
+    box-shadow: 0 0 15px #fff;
+}
+
+/* RADIOS */
+input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #8B0000;
+}

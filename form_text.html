@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang ="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Inscripción para luchadores</title>
+    <link rel="icon" type="image/png" href="fist.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+<body>
+
+  <h1>Inscripción para luchadores</h1>
+  <div class="marquee">¡Bienvenido al torneo anual de luchadores! Completa tu inscripción.</div>
+  <p>Bienvenido al torneo anual de artes marciales. Completa el formulario para unirte a los mejores guerreros del mundo, dispuestos a todo para conseguir la victoria.</p> 
+  <p>Tu información será revisada por el Comité y recibirás una confirmación por correo electrónico.</p>
+    <form action="#" method="POST">
+        <fieldset>
+          <legend>Datos personales</legend>
+          <div>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Escribe tu nombre..." required>
+          </div>
+          <div>
+            <label for="surname1">Primer apellido</label>
+            <input type="text" id="surname1" name="surname1" placeholder="Escribe tu primer apellido..." required>
+          </div>
+          <div>
+            <label for="surname2">Segundo apellido</label>
+            <input type="text" id="surname2" name="surname2" placeholder="Escribe tu segundo apellido..." required>
+          </div>
+          <div>
+            <label for="datebirth">Fecha de nacimiento</label>
+            <input type="date" id="datebirth" name="datebirth" required>
+          </div>
+          <div class="sexo-group">
+            <label>Sexo:</label>
+            <div class="radios">
+                <label><input type="radio" name="sex" value="male" required> Masculino</label>
+                <label><input type="radio" name="sex" value="female" required> Femenino</label>
+            </div>
+        </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Tu email" required>
+          </div>
+          
+          <script>
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+              const email = document.getElementById('email').value;
+              // El regex al menos un carácter antes de @, luego al menos dos después, punto y al menos dos caracteres más, es decir, asegurándonos que tiene la composición de un email real.
+              const regex = /^[^@]+@[^@]{2,}\.[^@]{2,}$/; // siempre empiezan
+              if (!regex.test(email)) {
+                alert('Introduce un email válido con formato xxxx@xx.xx');
+                e.preventDefault(); // Esto evita que se envíe el formulario
+              }
+            });
+          </script>
+        </fieldset>
+
+        <fieldset>
+          <legend><h1>DIRECCIÓN DEL LUCHADOR</h1></legend>
+          <div>
+            <label for="zipcode">Código Postal</label>
+            <input type="number" id="zipcode" placeholder="Pon tu código postal con los 5 dígitos" required>
+          </div>
+
+          <div>
+            <label for="province">Provincia</label>
+            <input type="text" id="province" placeholder="Escribe la provincia" required>
+          </div>
+
+          <div>
+            <label for="city">Ciudad</label>
+            <input type="text" id="city" placeholder="Escribe la población" required>
+          </div>
+          <div>
+            <label for="adress">Dirección completa</label>
+            <input type="text" id="adress" placeholder="Escribe la dirección completa" required>
+          </div>
+        </fieldset>
+        
+        <script>
+          const form = document.querySelector('form');
+        
+          form.addEventListener('submit', function(e) {
+            const zipcode = document.getElementById('zipcode').value;
+            const regex = /^\d{5}$/; // El CP tiene que tener exactamente 5 dígitos. No sirven cñódigos postales que no tengan esa composición.
+        
+            if (!regex.test(zipcode)) {
+              alert('Algo has puesto mal, el código postal debe tener 5 dígitos');
+              e.preventDefault(); // Evita que el formulario se envíe si no cumple con la condición de #87
+            }
+          });
+        </script>
+          
+
+        </fieldset>
+      
+        <fieldset>
+          <legend>Detalles del torneo</legend>
+          <div>
+            <label for="categoria">Categoría</label>
+            <select id="categoria" name="categoria" required>
+              <option value="">Selecciona...</option>
+              <option value="arma_melee">Arma melee</option>
+              <option value="bare_knuckle">Bare knuckle</option>
+              <option value="muay_thai">Muay Thai</option>
+              <option value="jiu_jitsu">Jiu-jitsu</option>
+              <option value="arma_blanca">Arma blanca</option>
+            </select>
+          </div>
+          <div>
+            <label for="peso">Clase de peso</label>
+            <select id="peso" name="peso" required>
+              <option value="">Selecciona...</option>
+              <option value="mosca">Mosca</option>
+              <option value="pluma">Pluma</option>
+              <option value="gallo">Gallo</option>
+              <option value="welter">Welter</option>
+              <option value="pesado">Pesado</option>
+            </select>
+          </div>
+        </fieldset>
+      
+        <button type="submit">Inscribirse</button>
+      </form>
+      
+    </div>
+    <h1></h1>
+    <div class="marquee">¡Premios en efectivo!</div>
+    <p>Los que caen, no merecen ni nuestra misericordia</p> 
+    <p>Más te vale que la información que metes es real, porque si no, te llevarás las del atún en el torneo.</p>
+    <script>
+        const mensaje = "Te has inscrito, te iremos avisando de novedades. Buena suerte, valiente guerrero."; // No se llegarán a ejecutar de momento, puesto a que el formulario no llega a enviarse
+        const regex = /^Te has inscrito, te iremos avisando de novedades. Buena suerte, valiente guerrero\.$/; // Igual que #134
+        console.log(regex.test(mensaje)); 
+
+    </script>
+    </body>
+    </html>
